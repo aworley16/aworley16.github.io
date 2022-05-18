@@ -45,7 +45,7 @@
 				</div>
 			</div>
 			
-			<!-- Upcoming Workshops block -->
+			<!-- Installation Instructions -->
 			<div class="w3s-panel w3-row">
 				<div class="w3-container w3-rest">
 					<div class="w3-section w3-card-4 w3-theme-l5">
@@ -53,109 +53,101 @@
 							<h2>Installation Instructions</h2>
 						</header>
 						
+						<!-- C++ install instructions -->
 						<div class="w3-container">
-						<h2> C++ </h2>
-						
-						<button type="button" class="collapsible">Windows</button>
-						<div class="content">
-							  <p>TEST CONTENT</p>
-						</div>
-						
-						<button type="button" class="collapsible">Visual Studio</button>
-						<div class="content">
-							  <p>TEST CONTENT</p>
-						</div>
-
-						<button type="button" class="collapsible">Linux</button>
-						<div class="content">
-							  <p>TEST CONTENT</p>
-						</div>
-						
-						<button type="button" class="collapsible">MacOs</button>
-						<div class="content">
-							  <p>TEST CONTENT</p>
-						</div>
-
-
-					</div>
-				</div>
-			</div>
-			
-			<!-- Previous Workshops -->
-			<div class="w3s-panel w3-row">
-				<div class="w3-container w3-rest">
-					<div class="w3-section w3-card-4 w3-theme-l5">
-						<header class="w3-container w3-theme">
-							<h2>Previous Workshops</h2>
-						</header>
-						<!-- Old workshop table-->
-						<div class="w3-container w3-row">
-							<div column-count=3>
-							  <table class="w3-table">
-									<tr>
-									    <th>Date</th>
-									</tr>
-									<tr>
-									  <td>June 17-21, 2019</td>
-									</tr>
-									<tr>
-									  <td>June 24-28, 2019</td>
-									</tr>
-									<tr>
-									  <td>September 12-18, 2020</td>
-									</tr>
-							   </table>
-
+							<h2> C++ and OpenMP </h2>
+							
+							<button type="button" class="collapsible">Windows (Command line)</button>
+							<div class="content">
+								  <p>Download and extract GCC from <a href="" download>LINK NEEDED</a></p>
+								  <p>Open a command prompt and navigate to the extracted folder</p>
+								  <p>Run "mingvars.bat"</p>
 							</div>
-							<div class="w3-container w3-rest">
-						    </div>
+							
+							<button type="button" class="collapsible">Windows (CodeBlocks)</button>
+							<div class="content">
+								  <p>Download and extract GCC from <a href="" download>LINK NEEDED</a></p>
+								  <p> Start Code Blocks, to to Settings->Compiler</p>
+								  <p> In the Settings Window, go to Compiler Settings</p>
+								  <p> Under "Other compiler options" add "-fopenmp" into the textbox</p>
+								  <p> Under "Linker settings" add "-lgomp" to "Other linker options" textbox.</p>
+								  <p> Under "Toolchain Executables" change the following variables</p>
+										<ul>
+											<li>"Compiler's installation directory" = &<path to extracted folder&> </li>
+											<li>"C compiler " = gcc.exe </li>
+											<li>"C++ compiler" = g++.exe</li>
+											<li>"Linker for dynamic libs" = g++.exe </li>					   
+										</ul>
+								   <p>If there are one or more existing projects, clean and rebuild the projects</p>		
+								   <p> Visual instructions can be found <a href="">here(link missing)</a></p>
+							</div>
+							
+							<button type="button" class="collapsible">Windows (Visual Studio)</button>
+							<div class="content">
+								  <p> Visual Studio 2015 or later recommended</p>
+								  </br>
+								  <p> For Visual Studio Version 2013 or eariler do the following steps first</p>
+									  <ul>
+										  <li>Go to Build menu top level</li>
+										  <li>Go to Project Contexts area Box</li>
+										  <li>Set Configuration = Debug</li>
+										  <li>Set Platform = Win32</li>
+									  </ul>
+								  <p>Open a new empty project</p>
+								  <p>Open the Solution Explorer, right click on new opened solution(++ sign)</p>
+								  <p>In the popup menu, go to Configuration Properties</p>
+								  <p>In the new window go to C/C++ -> Langauge</p>
+								  <p>click Open MP Support-> select yes from the drop box</p>
+							</div>
+
+							<button type="button" class="collapsible">Linux</button>
+							<div class="content">
+								  <p>g++ should already be on the command line</p>
+							</div>
+							
+							<button type="button" class="collapsible">MacOs</button>
+							<div class="content">
+								  <p>The default gcc compiler included in MacOs does not support openMP.
+								  In order to work around this a secondary compiler is required</p>
+								
+								  <p>Install homebrew using /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </p>
+								  <p>Install gcc using /usr/local/bin/brew install gcc</p>
+								  <p>use g++-11 as the commpile command. </p>
+								  
+							</div>
+
+							</br>
+							</br>
+							<button type="button" class="collapsible">Test Installation</button>
+							<div class="content">
+								<p>Download openmp_confirm.cpp</p>
+							    <p>Compile the program</p>
+                                <ul>
+									<li> Windows or Linux: g++ -o openmp_confirm openmp_confirm.cpp</li>
+									<li> MacOx: g++11 -o openmp_confirm openmp_confirm.cpp</li>
+									<li> Visual Studio: Build Solution</li>
+								</ul>
+								<p>run "openmp_confirm" </p>
+								<p> Output should be the following:</p>
+								<ul>
+									<li> hi from thread 0</li>
+									<li> hi from thread 1</li>
+								</ul>
+							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		
-		    <!-- Highlights-->
-		    <div class="w3-panel w3-row">
-				<div class="w3-container w3-rest">
-					<div class="w3-section w3-card-4 w3-theme-l5">
-						<header class="w3-container w3-theme">
-							<h2>Highlights</h2>
-						</header>
-						
-						<ul>
-						   <li>Participants attend 4 days of virtual pre-workshop training (2 hour 30 minutes each day)
-						   and 3 full days of in-person faculty development activities at Tennessee Tech University.</li>
-						   <li>Hands-on experience working with modules from previous successful PDC integration efforts</li>
-						   <li>$4000 stipend for each participant paid in two installments 
-						   ($2500 to defray the cost of attendance, and $1500 for implementation effort)</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		
-		    <!-- Workshop Overview -->
-			<div class="w3-panel w3-row">
-				<div class="w3-container w3-rest">
-					<div class="w3-section w3-card-4 w3-theme-l5">
-						<header class="w3-container w3-theme">
-							<h2>Workshop Overview</h2>
-						</header>
-						
-						<div class="w3-container w3-row">
-						  <p> The workshop will provide intensive hands-on experience on using thread libraries
-						  to write parallel programs in C/C++, Java, and Python. 
-						  The participants will learn how to integrate PDC topics following best practices
-						  in introductory programming classes. They will also be introduced to our toolkit which
-						  aids in introducing these topics into their early computing classes, as well as 
-						  pedagogical methods to interest students in PDC concepts.
-						  </p>
-						  <p> The goal of this workshop is to educate and form a community of skilled educators,
-						  who may then work together to develop new modules and methodologies that can be shared with the community.</p>
+					
+						<div class="w3-container">
+							<h2>Java Development Kit </h2>
 						</div>
-					</div>
-				</div>
-			</div>
-		
+						
+						<div class="w3-container">
+							<h2>Pyjama </h2>
+						</div>
+						
+						<div class="w3-container">
+							<h2>OpenMPy </h2>
+						</div>
+
 		</main>
 
 		<footer id="page_footer" class="w3-card-2 w3-center w3-theme w3-small" style="z-index:1;">
