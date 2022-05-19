@@ -136,18 +136,149 @@
 							</div>
 						</div>
 					
+					    <!-- Java Install Instructions-->
 						<div class="w3-container">
-							<h2>Java Development Kit </h2>
+							<h2>Java Development Kit 11 (JDK 11) </h2>
+					    	<button type="button" class="collapsible">Windows</button>
+							<div class="content">
+								<p> Go to the <a href="https://adoptium.net/releases.html?variant=openjdk11"> Adoptium Java 11 </a> downloads page </p>
+								<p> Fill in the information for your computer architecture </p>
+								<p> Download the .msi </p>
+								<p> Run the .msi and enable "Set JAVA_HOME varible" in the install wizard</p>
+							</div>
+							
+							<button type="button" class="collapsible">MacOs</button>
+							<div class="content">
+								<p> Install homebrew (see C++ on MacOs section)</p>
+								<p> open a terminal and run /usr/local/bin/brew install javall
+							</div>
+							
+							<button type="button" class="collapsible">Linux</button>
+							<div class="content">
+							   <p>Run "sudo apt-get install openjdk-11-jdk" in a terminal</p>
+							   <p>If you already have a different version of java installed.
+							      run "update-alternatives --config java" </p>
+							   <p>Verify installation with "javac -version"</p>
+							</div>
+					
+					
 						</div>
 						
+						</div>
+						
+						<!-- Python 3 Install Instructions-->
+						<div class="w3-container">
+							<h2>Python 3</h2>
+							<button type="button" class="collapsible">Windows Installation</button>
+							<div class="content">
+								<p> Download and install Python for your Os at https://www.python.org/downloads/ </p>
+								<p> Check "Add Python 3.9 to path" </p>
+							</div>
+							
+							<button type="button" class="collapsible">MacOs Installation</button>
+							<div class="content">
+								<p> Should be installed by default (see Confirm Installation)</p>
+								<p> If not installed </p>
+								<ul>
+									<li> Download appropriate version at https://www.python.org/downloads </li>
+									<li> Install pip by runing "sudo apt-get install pip" in a command terminal</li>
+								</ul>
+							</div>
+							
+							<button type="button" class="collapsible">Linux Installation</button>
+							<div class="content">
+								<p> Should be installed by default (see Confirm Installation)</p>
+								<p> If not installed </p>
+								<ul>
+									<li> Install by running "sudo apt-get install python3" </li>
+									<li> Install pip by runing "sudo apt-get install pip" in a command terminal</li>
+								</ul>
+							</div>
+							
+							</br>
+							<button type="button" class="collapsible">Confirm Installation</button>
+							<div class="content">
+							    <p> Run "python --version" in a command terminal </p>
+							</div>
+						</div>	
+						
+						<!-- Pyjama Install Instructions-->
 						<div class="w3-container">
 							<h2>Pyjama </h2>
+							<p> Prerequisite: Java JDK 11</p>
+							</br>
+							<button type="button" class="collapsible">Windows/MacOs/Linux Install</button>
+								<div class="content">
+									<p> Download and unzip Pyjama.zip </p>
+									<p> Navigate a command terminal to the extracted folder.</p>
+									<ul>
+									   <li> For Windows run: "set_pyjama.bat"</li>
+									   <li> For MacOs or Linux run: "source set_pyjama.sh"</li>
+									</ul>
+								</div>
+								
+							</br>
+							<button type="button" class="collapsible">Confirm Installation</button>
+								<div class="content">	
+							       <p> Download and unzip PyjamaConfirm.java </p>
+								   <ul>
+										<li>If runing WINDOWS</li>
+										<li>Compile with java -jar "$pyjama" PyjamaConfirm.java</li>
+								        <li>Run with java -cp "$pyjama":. PyjamaConfirm</li>
+								   </ul>
+								   </br>
+								   <ul>
+								       <li> If running MacOs or Linux </li>
+									   <li>Compile with "java -jar %pyjama% PyjamaConfirm.java"</li>
+								       <li> Run with "java -cp %pyjama%;. PyjamaConfirm"</li>
+								   </ul>
+								   </br>
+								   <p> You should see the following lines output (order does not matter): </p>
+								   </br>
+								   <ul>
+								      <li> hi from thread 0</li>
+								      <li> hi from thread 1</li>
+								   </ul>
+								</div>
 						</div>
-						
+							
+						<!-- OpenMpy Install Instructions-->
 						<div class="w3-container">
 							<h2>OpenMPy </h2>
+							<p> Prerequisite: Java JDK 11 and Python3</p>
+							</br>
+							<button type="button" class="collapsible">Windows/MacOs/Linux</button>
+							<div class="content">
+								<p> Download and unzip OpenMPy.zip </p>
+								<p> Navigate to extracted folder and open command prompt</p>
+								<p> Run "pip install -r requirements.txt"</p>
+								<p> Run "setpath.bat" </p>
+							</div>
+							
+							<button type="button" class="collapsible">MacOs and Linux</button>
+							<div class="content">
+							    <p> Download and unzip OpenMPy.zip </p>
+								<p> Navigate to extracted folder and open terminal</p>
+								<p> Run "pip3 install -r requirements.txt"</p>
+								<p> Run "source setpath.sh" </p>
+							</div>
+							</br>
+							<button type="button" class="collapsible">Confirm Installation</button>
+							<div class="content">
+							  <p> Download and extract openmpy_confirm.pyjama</p>
+							  <p> Run "jython openmpy_confirm.py"</p>
+							  <p> You should see the following output (Order doesn't matter)</p>
+								<ul>
+								   <li> Hello from thread: 0</li>
+								   <li> Hello from thread: 1</li>
+								</ul>
+							</div>
+							
+							
 						</div>
-
+					</div>
+				</div>
+			</div>
 		</main>
 
 		<footer id="page_footer" class="w3-card-2 w3-center w3-theme w3-small" style="z-index:1;">
@@ -175,7 +306,6 @@
 			});
 		}
 		</script>
-		
 		
 	</body>
 </html>
