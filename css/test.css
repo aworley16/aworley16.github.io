@@ -38,5 +38,9 @@ table, th, td {
 }
 
 .right {
-  width: 30%
+  width: 30%;
+}
+
+.pic_grid{
+   width: 25%; 
 }
